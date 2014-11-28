@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Waterlock-easy authentication in Sails"
+date: 2014-11-28 18:14:47 +0530
+comments: true
+categories: Low power bluetooth
+author: rohan reji	
+---
+<p style="text-align: left;">The latest android releases ( Android 4.3, api level 18) come with a new hardware feature called BLE- Bluetooth Low Energy.</p>
+<p style="text-align: left;">Now what is BLE. The low power bluetooth allows smartphones to communicate with low power bluetooth devices like proximity sensors and herat rate monitors and that too at an extremely low rate of power consumption.</p>
+<p style="text-align: left;"><strong>GAP</strong> - Generic Access profile, it controls connections and advertising in bluetooth. There are basically to type of information : advertising data payload and scan response payload. Advertising response payload lets the central device know that a peripheral device is in its range. The scan response payload is optional and contains additional information like the device name. The peripheral will send the advertising data payload every advertising interval and sometimes, if it receives a request from central device, sends scan response data.</p>
+<p style="text-align: left;">To <strong>BROADCAST</strong>, means to send data to multiple devices it is not possible to use the GATT profile (it will be described later) and other characteristics as it requires two devices (peripheral and a central device) to be connected. And a peripheral device can get connected to only to one device at a time. So we can add some additional data, data that needs to be broadcasted, to the advertising data or scan response data which are available to all the central devices within the range not requiring it to be<strong> connected</strong>. Once a device is connected to a central device there won't be any advertising packets sent, and GATT profile will be used.</p>
+<p style="text-align: left;"><strong>GATT</strong>- Generic Attribute is responsible for communication between two devices once connection is established. It is bidirectional unlike the broadcast phase we considered earlier. And the peripheral will act as the serve and central device act as a slave. A central device can be connected to multiple peripherals but a peripheral can only be connected to a single central device. When a connection is established  the peripheral will specify a <strong>connection interval</strong> to the central device.</p>
+<p style="text-align: left;">All the communication are started by the slave, central device, and it will send a request to server, peripheral device, the server responds to the request. This is done every connection interval which was specified y the peripheral earlier.The GATT profile is a general specification for sending and receiving short pieces of data, attributes, over the ble link. All  Low Energy application profiles are based on GATT.</p>
+<p style="text-align: left;">And this covers the basic introduction to BLE. Watch out for the next post where we start coding. :)</p>
