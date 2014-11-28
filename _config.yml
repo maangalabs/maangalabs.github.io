@@ -1,0 +1,37 @@
+# Site settings
+title: Maangalabs
+email: pranav@maanglabs.com
+description: Maangalabs is a technology blog which has articles on newer experiments on web.. Maangalabs has fresh tutorials on Node.js Sails and Angular 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://maangalabs.com" # the base hostname & protocol for your site
+#twitter
+twitter_username: pranavrajs
+github_username:  pranavrajs
+
+category_archive:
+  path: /blog/categories/
+
+#linkedin
+linkedin_username: pranavrajs
+
+#google analytics
+google_analytics_id : UA-53386152-1
+#gplus
+gplus_username: 101893920934936418705
+
+#fb_username
+fb_username: pranav.tayberrycreative
+
+permalink: /blog/:year/:month/:day/:title
+# Build settings
+markdown: kramdown
+disqus_short_name: maangalabscom
+disqus_show_comment_count: true
+authors:
+  pranavrajs:
+    display_name: Pranav Raj S
+    email: pranavrajs@gmail.com
+    fb: pranav.tayberrycreative
+    linkedin: pranavrajs
+    twitter: pranavrajs
+    github: pranavrajs

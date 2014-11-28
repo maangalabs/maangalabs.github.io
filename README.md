@@ -1,4 +1,4 @@
-maangalabs.github.io
+pranavrajs.github.io
 ====================
 
-Official Blog
+Personal Blog
