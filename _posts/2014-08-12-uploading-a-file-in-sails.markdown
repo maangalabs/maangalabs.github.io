@@ -4,7 +4,9 @@ title: "Uploading a file in Sails"
 date: 2014-08-12 20:24:28 +0530
 comments: true
 categories: sails webdevelopment nodejs
-author: pranavrajs	
+author: pranavrajs
+github_repo_username : maangalabs
+github_repo : uploading-file-in-sails
 ---
 
 
@@ -80,14 +82,17 @@ We will add new function upload in File controller which can be accessed through
 {% highlight javascript %}
   upload: function  (req, res) {
 		if(req.method === 'GET')
-			return res.json({'status':'GET not allowed'});						//	Call to /upload via GET is error
+			return res.json({'status':'GET not allowed'});						
+			//	Call to /upload via GET is error
 
 		var uploadFile = req.file('uploadFile');
 		console.log(uploadFile);
 
-	    uploadFile.upload(function onUploadComplete (err, files) {				//	Files will be uploaded to .tmp/uploads
+	    uploadFile.upload(function onUploadComplete (err, files) {				
+	    //	Files will be uploaded to .tmp/uploads
 	    																		
-	    	if (err) return res.serverError(err);								//	IF ERROR Return and send 500 error with error
+	    	if (err) return res.serverError(err);								
+	    	//	IF ERROR Return and send 500 error with error
 			
 	    	console.log(files);
 	    	res.json({status:200,file:files});
@@ -127,10 +132,21 @@ Yaay!!! It works .
 
 Here we could upload the file to .tmp/uploads . So how do we configure it with a custom folder , say 'assets/images'. We can achieve this by adding options to upload function as shown below.
 
+
+`The tutorial has been updated to work with latest Sails version .`
+
 {% highlight javascript %}
-     uploadFile.upload({ dirname: './assets/images'},function onUploadComplete (err, files) {				//	Files will be uploaded to ./assets/images
-	    																		
-	    	if (err) return res.serverError(err);								//	IF ERROR Return and send 500 error with error
+
+	// Configure with 'dirname' 
+
+    uploadFile.upload({ dirname: '../../assets/images'},function onUploadComplete (err, files) {				
+    // Earlier it was ./assets/images .. Changed to ../../assets/images
+    //	Files will be uploaded to ./assets/images
+    // Access it via localhost:1337/images/file-name
+
+
+	    	if (err) return res.serverError(err);									
+	    	//	IF ERROR Return and send 500 error
 			
 	    	console.log(files);
 	    	res.json({status:200,file:files});
@@ -152,5 +168,4 @@ Yeah !! Everything is fine . Here we have set a folder only . If we want a custo
 
 That's all for today . We'll see the loading effects in Sails Angular API calls in next tutorial . See you there bye. :)
 
-
-
+<br/>
