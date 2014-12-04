@@ -19,7 +19,6 @@
 .blog-post-small {
   border-bottom: #008CBA 1px dashed;
   text-align: justify;
-  border-bottom: #ccc 1px solid;
   padding: 10px;
   p {
     font-size: 14.43px;
@@ -55,11 +54,10 @@
   margin-top: 10px;
 }
 .author_block{
-  padding:1%;
+  padding:2%;
   p{
-    line-height: 47px;
-    font-size: 19px;
-    text-transform: uppercase;
+    line-height: 44px;
+    font-size: 13px;
   }
   ul{
     display: block;

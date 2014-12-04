@@ -18,14 +18,9 @@ layout: default
 	   
 	  	<article class="blog-post-small blog-post-content">
 	    	{{ content }}
-	    	<div class="col-md-12">
-		  		<a class= "btn-primary btn-large" style="padding:10px; margin-left:-24px; text-decoration:none;" href = "//github.com/{{ page.github_repo_username }}/{{page.github_repo}}" target="_blank">Download Source</a>
-	  			<iframe style = "padding:10px;"src="http://ghbtns.com/github-btn.html?user={{ page.github_repo_username }}&repo={{page.github_repo}}&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe> 
-	  		</div>
 	  	</article>
-	  	{% if page.github_repo_username %}
-
-	  	{% endif %}
+	  	
+	  	
 	  	{% include author_block.html %}
 	</div>
 	<div class="col-md-1"></div>
