@@ -13,6 +13,7 @@ Hi everyone,
 
 You might expecting a tutorial on JSON webtokens with Waterlock as i promised you in the last tutorial , but this is not that one. The reason is that when i searched , experimented more on Waterlock , i found an issue with invalidating JSON web-token , i've reported the issue in their Github Page. Hope he'll rectify it. In the meantime we can go for an awesome tutorial on Socket in Sails.js .I'll use AngularJS here along with Sails. We are going to create a chat application (not a real one :D , a demo piece ;) ) with Sails Sockets and Angular.
 
+<!-- more -->
 ![SailsSocket-1](/images/posts/10/sock-4.png)
 
 
