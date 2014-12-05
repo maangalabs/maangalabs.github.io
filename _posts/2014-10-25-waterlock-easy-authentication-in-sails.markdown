@@ -186,3 +186,15 @@ You'll be automatically logged in when you create a user. So let us check the `r
 Yeah!!! It works perfect. This was a tutorial developed on Session based authentication adapted from the Intro given by Waterlock. Let us see how to create a JSON token based authentication and create a complete user login/registration system with Waterlock,Angular and obiviously Sails in next tutorials.
 
 So this is the end of this tutorial. Let us see in the next tutorial, bye :)
+
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-7831813631234919";
+    google_ad_slot = "5779966071";
+    google_ad_width = 728;
+    google_ad_height = 90;
+</script>
+<!-- Maangalabs-9 -->
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>

@@ -169,3 +169,15 @@ Yeah !! Everything is fine . Here we have set a folder only . If we want a custo
 That's all for today . We'll see the loading effects in Sails Angular API calls in next tutorial . See you there bye. :)
 
 <br/>
+
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-7831813631234919";
+    google_ad_slot = "2826499672";
+    google_ad_width = 728;
+    google_ad_height = 90;
+</script>
+<!-- Maangalabs-7 -->
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>

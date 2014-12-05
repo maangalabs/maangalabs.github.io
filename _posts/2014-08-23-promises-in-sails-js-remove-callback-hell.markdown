@@ -116,3 +116,16 @@ Here we are not waiting for Classroom data to be fetched , both student details 
 ![PyramidofDoom-2]({{ site.url }}/images/posts/8/pyr-2.png)
 
 Yaay!!! It works ... We have created an API with promises here . We'll see advanced experiments with Sails in coming tutorials.. See you there bye
+
+
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-7831813631234919";
+    google_ad_slot = "4303232878";
+    google_ad_width = 728;
+    google_ad_height = 90;
+</script>
+<!-- Maangalabs-8 -->
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
