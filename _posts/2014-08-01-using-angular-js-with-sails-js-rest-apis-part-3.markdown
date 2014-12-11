@@ -54,7 +54,7 @@ employeeApp.controller('EmployeeController',function($scope,$http,$log){
 	$http.get("http://localhost:1337/employee/")
 		 .success(function(data){
 		 	$scope.employees=data;
-		 	$log.info($scope.empList);
+		 	$log.info($scope.employees);
 		 });
 });
 {%endhighlight%}
