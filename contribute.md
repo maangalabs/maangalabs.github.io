@@ -11,7 +11,7 @@ Maangalabs is a technology blog which aims at high quality articles on latest de
 Clone the repository 
 
 {% highlight text %}
-git clone https://github.com/pranavrajs/pranavrajs.github.io.git
+git clone https://github.com/maangalabs/maangalabs.github.io.git
 {% endhighlight %}
 
 Add your articles or edits 
