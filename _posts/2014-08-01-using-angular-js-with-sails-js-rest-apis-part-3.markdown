@@ -102,15 +102,3 @@ $scope.empList=data;
 This updates the empList which updates the view , even without a refresh. 
 
 Here we have seen how we can use Angular Js with Sails REST apis, we will see the power of Angular in coming tutorials . We can have a more advanced examples with `findEmployeebyEmpnum` API in next tutorials .See you there bye :)
-
-
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "5919566879";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-3 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>

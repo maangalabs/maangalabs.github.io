@@ -169,13 +169,3 @@ Check with some other value
 Hey !!! It works :) . We will try using these APIs with Angular JS in front-end to build a reatime app in next tutorials . See you there , bye :)
 
 
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "4442833672";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-2 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>

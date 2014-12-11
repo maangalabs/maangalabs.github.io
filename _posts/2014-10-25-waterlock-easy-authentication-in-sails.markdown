@@ -188,13 +188,3 @@ Yeah!!! It works perfect. This was a tutorial developed on Session based authent
 So this is the end of this tutorial. Let us see in the next tutorial, bye :)
 
 
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "5779966071";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-9 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>

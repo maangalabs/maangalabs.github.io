@@ -119,13 +119,3 @@ Yaay!!! It works ... We have created an API with promises here . We'll see advan
 
 
 
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "4303232878";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-8 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>

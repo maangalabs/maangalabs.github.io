@@ -69,14 +69,3 @@ change it to
 port: process.env.PORT || your–desired–port–address,
 {% endhighlight %}
 Save the file and try `lifting the app` now the app will be lifted in given port address.In production, you’ll probably want to change this setting to 80 (http://) or 443 (https://) if you have an SSL certificate. By now you know how to create a basic Sails application . Generating apis using the Sails app will be handled in the next tutorial . See you there bye :)
-
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "2966100470";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-1 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>

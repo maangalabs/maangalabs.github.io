@@ -73,15 +73,3 @@ You can download the theme from its Github Repository .
 <iframe src="http://ghbtns.com/github-btn.html?user=pranavrajs&repo=adipoli-octopress-theme&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
 
 
-
-
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "8873033270";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-5 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>

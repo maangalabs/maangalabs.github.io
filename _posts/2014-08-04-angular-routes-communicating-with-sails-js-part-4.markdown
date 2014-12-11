@@ -238,14 +238,3 @@ It will now show a screen as seen below
 Hooray!!! We have completed the routing part very easily. Next time we'll discuss about the adapters in Sails Js and how you can tune it to use multiple databases - A hybrid database architecture with Sails having both relational databases like MySQL and non-relational databases like MongoDB. Thanks for reading and see you there :) 
 
 <strong>Update : </strong> The file for this tutorial can be seen <a href="https://github.com/pranavrajs/maangalabs-tutorials/tree/master/sails-tutorials/angular-routes-communicating-with-sails-js-part-4" target="_blank">here</a> 
-
-<script type="text/javascript">
-    google_ad_client = "ca-pub-7831813631234919";
-    google_ad_slot = "7396300078";
-    google_ad_width = 728;
-    google_ad_height = 90;
-</script>
-<!-- Maangalabs-4 -->
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
