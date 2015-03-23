@@ -143,7 +143,7 @@ module.exports = {
           if(err)
             res.json({error:err});
           if(user === undefined)
-            res.json({notFound:true});
+            res.notFound();
           else
             res.json({notFound:false,userData:user});
         });
