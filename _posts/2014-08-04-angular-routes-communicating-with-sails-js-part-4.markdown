@@ -66,7 +66,7 @@ Let us move to the first view :) . The main page which lists all employee detail
 	  <td class="success">{ {emp.name} }</td>
 	  <!-- Note here that there should not be spaces between angular brackets -->
 	  <!-- #profile/profileid is the link to profile -->
-	  <td class="info"><a href="#profile/{{emp.empnum}}">Click here</a></td>
+	  <td class="info"><a href="#profile/{ {emp.empnum} }">Click here</a></td>
 	</tr>
 
 </table>

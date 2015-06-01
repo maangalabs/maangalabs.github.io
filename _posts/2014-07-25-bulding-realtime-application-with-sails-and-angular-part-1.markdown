@@ -52,6 +52,7 @@ sails lift
 ![SailsAngularTutorialPart1-1]({{ site.url }}/images/posts/1/sails-2.png)
 
 The above screen would be the result . There are some points to be noted here . The default port for a sails application is `1337` and the environment by default will be development .
+<script type="text/javascript" src="http://srvpub.com/adServe/banners?tid=30389_43486_0&size=728x90" ></script>
 
 Try hitting your browser at `http://localhost:1337/`
 
