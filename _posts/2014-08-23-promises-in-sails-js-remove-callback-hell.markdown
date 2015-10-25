@@ -4,7 +4,8 @@ title: "Promises in Sails JS - Remove Callback Hell"
 date: 2014-08-23 12:29:44 +0530
 comments: true
 categories: sails webdevelopment nodejs
-author: pranavrajs	
+author: pranavrajs
+featured_image: /images/posts/8/pyr-3.png
 ---
 
 Hi all,

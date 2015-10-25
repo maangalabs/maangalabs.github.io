@@ -1,27 +1,29 @@
 ---
 layout: default
 ---
-<div class="row">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
-
-	  	
-	    <h1>{{ page.title }}</h1>
-	    <div id="google_translate_element" style="padding-right: 27px;float: left;"></div><script type="text/javascript">
-			function googleTranslateElementInit() {
-  				new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-				}
-		</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        
-	    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</p>
-
-	   
-	  	<article class="blog-post-small blog-post-content">
-	    	{{ content }}
-	  	</article>
-	  	
-	  	
-	  	{% include author_block.html %}
-	</div>
-	<div class="col-md-1"></div>
+<div class="bg-pre-header">
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.date | date: "%b %-d, %Y" }}</p>
+</div>
+<div class="col-md-12 bg-post-header-div" style="background: url({{ page.featured_image}}) 50% 50%;background-size: cover">
+    
+</div>
+<div class="row col-md-12">
+    <div class="col-md-10 col-md-offset-1">
+        <div id="google_translate_element" style="padding-right: 27px;float: left;"></div>
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <br>
+        <article class="blog-post-small blog-post-content">
+            {{ content }}
+        </article>
+        {% include author_block.html %}
+    </div>
 </div>

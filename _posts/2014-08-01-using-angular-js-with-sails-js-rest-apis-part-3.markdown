@@ -4,7 +4,8 @@ title: "Using Angular JS with Sails Js REST APIs - Part 3"
 date: 2014-08-01 21:26:02 +0530
 comments: true
 categories: nodejs webdevelopment sails realtimeweb angularjs
-author: pranavrajs	
+author: pranavrajs
+featured_image: /images/posts/3/arc-1.png
 ---
 
 Hi all,

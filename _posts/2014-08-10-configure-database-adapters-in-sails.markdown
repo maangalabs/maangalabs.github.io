@@ -4,7 +4,8 @@ title: "Configure database adapters in Sails"
 date: 2014-08-10 11:33:49 +0530
 comments: true
 categories: sails nodejs webdevelopment
-author: pranavrajs  
+author: pranavrajs
+featured_image: /images/posts/6/adap-7.png
 ---
 
 Hi all, 

@@ -5,6 +5,7 @@ date: 2014-10-25 18:14:47 +0530
 comments: true
 categories: sails nodejs webdevelopment
 author: pranavrajs	
+featured_image: /images/posts/9/waterlock-7.png
 ---
 
 Hello all,

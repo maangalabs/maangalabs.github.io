@@ -7,6 +7,7 @@ categories: sails nodejs webdevelopment
 author: pranavrajs	
 github_repo: socket-in-sails
 github_repo_username: maangalabs
+featured_image : /images/posts/10/sock-4.png
 ---
 
 Hi everyone,
@@ -298,8 +299,6 @@ I'm using the following frameworks
 - <strong> Bootswatch - Paper Theme  : </strong> This can be used to create a Material Design like interface which is actually cool :)
 - <strong>Angular JS :</strong> Make our job easier :) I don't think i should talk more about this 
 
-
-<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=maangalabs-20&o=1&p=48&l=ur1&category=primemain&banner=097TDSG20MH99VMHNX82&f=ifr&linkID=IJHFV4FID27TIUFG" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
 
 Our basic `index.html` will look like

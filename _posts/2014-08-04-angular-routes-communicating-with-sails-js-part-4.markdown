@@ -5,6 +5,7 @@ date: 2014-08-04 21:25:04 +0530
 comments: true
 categories: sails angularjs webdevelopment nodejs
 author: pranavrajs	
+featured_image: /images/posts/4/routes-3.png
 ---
 
 Hi all,

@@ -7,6 +7,7 @@ categories: sails webdevelopment nodejs
 author: pranavrajs
 github_repo_username : maangalabs
 github_repo : uploading-file-in-sails
+featured_image: /images/posts/7/upl-9.png
 ---
 
 

@@ -4,7 +4,8 @@ title: "Generating REST API With Sails JS - Part 2"
 date: 2014-07-26 21:07:25 +05:30
 comments: true
 categories: nodejs realtimeweb sails webdevelopment
-author: pranavrajs  
+author: pranavrajs
+featured_image: /images/posts/2/api-6.png
 ---
 
 Hi ,

@@ -5,6 +5,7 @@ date: 2014-08-07 22:59:50 +0530
 comments: true
 categories: webdevelopment octopressthemes
 author: pranavrajs	
+featured_image: /images/posts/5/theme-1.png
 ---
 
 Hi all, 
