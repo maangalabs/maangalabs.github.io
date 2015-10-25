@@ -15,7 +15,10 @@
         }
     }
 }
-
+.btn-primary {
+    border: 0 !important;
+    border-radius: 2px;
+}
 .blog-post-small {
     border-bottom: #008CBA 1px dashed;
     text-align: justify;

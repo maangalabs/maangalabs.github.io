@@ -12,6 +12,7 @@ Hi ,
 
 This is the second part of building a realtime web application with Sails and Angular. The concept of REST API is important here. You can read more about REST API and RESTFUL web services <a target="_blank" href="http://www.restapitutorial.com/">here</a>.
 
+<b>UPDATE (25-OCT-2015) : </b> I've updated the article including the testing of Sails CRUD APIs (GET,POST,PUT,DELETE methods). 
 <h4>How to generate a REST API with Sails JS ?</h4>
 
 As i said earlier Sails is a rapid prototyping platform , API generation is faster and easier in Sails . 
@@ -102,9 +103,35 @@ You will get a screen like this.
 
 You may try adding more employees here. 
 
-<strong>NOTE: Be sure that the Sails app is lifted properly . :) </strong>
+**Testing REST API**
 
-We will now try to generate an API which returns an employee with given employee number. Let us look into EmployeeController.js file now.
+Now you have created an employee API with Sails. Sails give you standard REST API (GET, POST, PUT, DELETE) command functions while you generate the API. Now we can test these APIs.
+I'm using <b>POSTMAN</b> - a Chrome extension to test the API.
+
+<b>GET:</b>
+GET request gives you previous records.
+
+![SailsAngularTutorialPart2-11](/images/posts/2/api-11.png)
+
+<b>POST:</b> 
+POST request creates an new record.
+
+![SailsAngularTutorialPart2-12](/images/posts/2/api-12.png)
+
+
+<b>PUT:</b> 
+PUT request updates the record with given id. Here we've given an id 2. This updates the record with id 2 replacing old name with new name.
+
+![SailsAngularTutorialPart2-13](/images/posts/2/api-13.png)
+
+
+<b>DELETE:</b> 
+DELETE request delete the record with given id.
+
+![SailsAngularTutorialPart2-14](/images/posts/2/api-14.png)
+
+
+The above APIs are generated during the `sails generate api` command. We don't need to worry about the CRUD operations as Sails would take care of that. We will now try to create an new API which returns an employee with given employee number. Let us look into EmployeeController.js file now.
 
 {% highlight javascript %}
 
@@ -135,18 +162,23 @@ File will be as shown as above. If we want to write an API say `employee/findEmp
 
 module.exports = {
   
-  findEmployeebyEmpnum:function(req,res)
-  {
+  findEmployeebyEmpnum:function (req,res) {
     var id = req.param('id');
     Employee.findOne({empnum:id})
-        .exec(function(err,user){
-
-          if(err)
-            res.json({error:err});
-          if(user === undefined)
-            res.notFound();
+        .exec(function (err,user) {
+          if(err){
+            return res.json({
+              error:err
+            });
+          }
+          if(user === undefined) {
+            return res.notFound();
+          }
           else
-            res.json({notFound:false,userData:user});
+            return res.json({
+              notFound:false,
+              userData:user
+            });
         });
   }
 };
