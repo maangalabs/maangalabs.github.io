@@ -10,7 +10,7 @@ featured_image: /images/posts/12/ionic-1.png
 
 Hello everyone,
 
-It has been a long time i've interacted with you. This article is not actually a tutorial, but it will be helpful when you use IonicFramework at a scale. I've been working with IonicFramework for almost 8 months now. I've used in couple of exciting projects also. It works well with small as well large projects. 
+It has been a long time i've interacted with you. This article is not actually a tutorial, but it will be helpful when you use IonicFramework at scale. I've been working with IonicFramework for almost 8 months. I've used Ionic in couple of exciting projects. It works well with small and large projects. 
 <!-- more -->
 <h4>Project Structure</h4>
 
@@ -143,8 +143,8 @@ ngCordova has the wrapper for almost every cordova plugins. `http://ngcordova.co
 
 <h4>Debugging</h4>
 
-You can debug your hybrid application using Chrome remote debugging. To debug, connect your device via adb and run the app. Go to chrome://inspect/#devices . You'll find you application with an inspect button.
+You can debug your hybrid application using Chrome remote debugging. To debug, connect your device via adb and run the app. Go to `chrome://inspect/#devices` . You'll find you application with an inspect button.
 
 
-These are some of the points which came across when i write this article. I'll update with more tools and services that might be useful when you are working on larger projects. Bye
+These are some of the points which i came across when i write this article. I'll update the article with more tools and services that might be useful when you are working on larger projects. Bye
 
