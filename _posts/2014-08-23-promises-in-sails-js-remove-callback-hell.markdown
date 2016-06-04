@@ -11,6 +11,7 @@ featured_image: /images/posts/8/pyr-3.png
 Hi all,
 
 It has been a week since the last post , i was busy in my academics . Here is our new tutorial on Sails JS . This time its a very useful topic. We'll deal with removing `Callback Hell` (also called `Pyramid of Doom`) in Javascript. 
+
 <!-- more -->
 <h4>What's actually Pyramid of Doom in JS ?</h4>
 Look at the picture below . This is a popular example from MDN . 
@@ -45,19 +46,20 @@ This can be achieved by following code segment.
 
 {% highlight javascript %}
 
-	Student.findOne(givenuserid)
-		   .exec(function(err,data){
-		   		//Code cannot be reused ... Use it for understanding only 
-		   		Classroom.findOne(extracted data)
-		   				 .exec(function(err,data){
+Student.findOne(givenuserid)
+    .exec(function(err, data) {
+        //Code cannot be reused ... Use it for understanding only 
+        Classroom.findOne(extracted data)
+            .exec(function(err, data) {
 
-		   				 		Student.find(another data)
-		   				 			   .exec(function(err,data){
-		   				 			   		// Do something here
-		   				 			   	});
-		   				 });
-		   });
-		   // Code only for understanding 
+                Student.find(another data)
+                    .exec(function(err, data) {
+                        // Do something here
+                    });
+            });
+    });
+	
+// Code only for understanding 
 {% endhighlight%}
 
 We can see another approach here . 
@@ -69,45 +71,45 @@ Promises use the Q library, so anything you do after the first then call (or spr
 
 {% highlight javascript %}
 
-findallStudents:function (req,res) {
-		var id = req.param('id');
-		Student.findOne({stdid:id})
-				.then(function(stdData){
-						//If no student found
-						if(stdData===undefined)
-								return res.json({notFound:true});
-						// Store Class Data	
-						var classData = Classroom.findOne({classid:stdData.classroom})
-												 .then(function(classData){
+findallStudents: function(req, res) {
+    var id = req.param('id');
+    Student.findOne({ stdid: id })
+        .then(function(stdData) {
+            //If no student found
+            if (stdData === undefined)
+                return res.json({ notFound: true });
+            // Store Class Data	
+            var classData = Classroom.findOne({ classid: stdData.classroom })
+                .then(function(classData) {
 
-												 		var new_data = classData;
-												 				delete new_data.createdAt;
-												 				delete new_data.updatedAt;
-												 		return new_data;
+                    var new_data = classData;
+                    delete new_data.createdAt;
+                    delete new_data.updatedAt;
+                    return new_data;
 
-												 });
-						var std_data = Student.find({classroom:stdData.classroom})
-											  .then(function(allData){
-														var new_data = allData;
-												 				delete new_data.createdAt;
-												 				delete new_data.updatedAt;
-												 		return new_data;
-											  });
-						return [classData,std_data];					  	
-				})
-				.spread(function(classData,stdData){
+                });
+            var std_data = Student.find({ classroom: stdData.classroom })
+                .then(function(allData) {
+                    var new_data = allData;
+                    delete new_data.createdAt;
+                    delete new_data.updatedAt;
+                    return new_data;
+                });
+            return [classData, std_data];
+        })
+        .spread(function(classData, stdData) {
 
-					var newJson = {};
-						newJson.classname = classData.name;
-						newJson.students = stdData;
-					return res.json({notFound:false, data:newJson});
-				})
-				.fail(function(err){
-					console.log(err);
-					res.json({notFound:true,error:err});
-				});
+            var newJson = {};
+            newJson.classname = classData.name;
+            newJson.students = stdData;
+            return res.json({ notFound: false, data: newJson });
+        })
+        .fail(function(err) {
+            console.log(err);
+            res.json({ notFound: true, error: err });
+        });
 
-	}
+}
 {% endhighlight %}
 
 Here we are not waiting for Classroom data to be fetched , both student details and classroom details are fetched at the same time .

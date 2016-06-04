@@ -11,6 +11,7 @@ featured_image: /images/posts/12/ionic-1.png
 Hello everyone,
 
 It has been a long time i've interacted with you. This article is not actually a tutorial, but it will be helpful when you use IonicFramework at scale. I've been working with IonicFramework for almost 8 months. I've used Ionic in couple of exciting projects. It works well with small and large projects. 
+
 <!-- more -->
 <h4>Project Structure</h4>
 

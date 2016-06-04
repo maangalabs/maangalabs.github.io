@@ -11,6 +11,7 @@ featured_image: /images/posts/1/sails-1.png
 Hi ,
 
 This is the first tutorial on creating an application with Sails JS and Angular JS. So let us get into the topic . There are two big things which we should notice . We have selected Sails as well as Angular, why? This will be briefed in coming tutorials :) .
+
 <!-- more -->
 <h4>A small intro about SailsJS</h4>
 

@@ -2,18 +2,13 @@
 <html>
 {% include head.html %}
 
-<body>
-    {% include header.html %}
+<body class="body">
+    {% include header.html %} 
+    <div class="content-container">
     {{ content }}
-    <div class="col-md-12 share-div">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            {% include sharer.html %}
-        </div>
-        <div class="col-md-1"></div>
     </div>
     <div class="col-md-12">
-        {% include footer.html %}
+        {% include sharer.html %}
     </div>
     <div class="col-md-12">
         {% include endfooter.html %}

@@ -1,6 +1,6 @@
 # Site settings
 title: Maangalabs
-email: pranav@maanglabs.com
+email: pranav@maangalabs.com
 description: Maangalabs is a technology blog which has articles on newer experiments on web.. Maangalabs has fresh tutorials on Node.js Sails and Angular 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://maangalabs.com" # the base hostname & protocol for your site

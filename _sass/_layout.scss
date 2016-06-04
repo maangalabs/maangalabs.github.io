@@ -1,232 +1,121 @@
-.blog-theme-class {
-    margin-top: 0.3%;
-    padding: 3%;
-    background: #008cba;
-    .jumb-bot {
-        background: #008cba;
-    }
-    .jumbotron {
-        background: #008cba;
-        h1 {
-            color: #fff;
-        }
-        p {
-            color: #fff;
-        }
-    }
-}
-.btn-primary {
-    border: 0 !important;
-    border-radius: 2px;
-}
-.blog-post-small {
-    border-bottom: #008CBA 1px dashed;
-    text-align: justify;
-        padding: 20px;
-    p {
-        font-size: 13.6px;
+.body {
+    font-family: 'Arvo', serif;
+    -webkit-font-smoothing: antialiased;
+    .content-container {
+        margin-top: 80px;
     }
     h3 {
-        font-size:20px;
+        a {
+            color: $background-color !important;
+        }
     }
-}
-
-.bg-header-div {
-    position: relative;
-    background: #5C97FF;
-    overflow: hidden;
-    min-height: 400px;
-    background: url('../images/bg_header.jpg');
-    background-repeat: no-repeat;
-    background-position: 60% 30%;
-    position: relative;
-    h1 {
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: bold;
+    .btn-primary {
+        background: $background-color;
+        border: 1px solid $text-color;
+        padding: 10px;
+        font-size: 14px;
     }
-    p {
-        color: #fff;
+    .btn-primary:hover,
+    .btn-primary:active,
+    .btn-primary:focus {
+        background: $text-color !important;
+        border: 1px solid $background-color !important;
+        color: $background-color !important;
     }
-}
-
-.bg-post-header-div {
-    background: #5C97FF;
-    overflow: hidden;
-    min-height: 300px;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: 60% 30%;
-}
-
-.bg-pre-header {
-    padding: 60px 0 30px;
-    min-height: 150px;
-    background: #EDEDED;
-    text-align: center;
-    h2 {
-        color: #252525;
-    }
-    p {
-        color: #252525;
-    }
-}
-
-.navbar {
-    margin-bottom: 0px;
-}
-
-.jumb-bot {}
-
-.jumb-bot-jumbu {
-    margin: 0px;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    background: #eee;
-    p {
-        padding-top: 13px;
-    }
-}
-
-.left-syms {
-    font-size: 20px;
-    li a span {
-        font-size: 12.5px;
-        display: none;
-    }
-}
-
-.listgroup-div {
-    margin-top: 10px;
-}
-
-.author_block {
-    padding: 2%;
-    p {
-        line-height: 44px;
-        font-size: 13px;
-    }
-    ul {
-        display: block;
-        padding: 0;
-        float: left;
+    .navbar {
+        height: 60px;
+        padding-top: 4px;
+        background: $background-color;
+        border-radius: 0;
+        border: 0px;
+        a {
+            color: $text-color;
+        }
         li {
-            float: left;
-            display: block;
-            font-size: 24px;
-            padding: 5px;
             a {
-                text-decoration: none;
+                color: $text-color !important;
             }
         }
     }
-}
-
-.blog-post-content {
-    font-size: 14px;
+    p {
+        font-size: 14px;
+        font-family: 'Arvo', serif;
+        -webkit-font-smoothing: antialiased;
+    }
+    code.highlighter-rouge {
+        font-family: 'Arvo', serif;
+    }
     img {
         max-width: 100%;
-        border: #eee 2px solid;
+        padding: 10px;
+        border: 1px solid #eee;
     }
-}
-
-.twitter_share {
-    float: left;
-    padding: 10px;
-}
-
-.fb_share {
-    float: left;
-    padding: 10px;
-}
-
-.linkedin_share {
-    float: left;
-    padding: 10px;
-    padding-left: 0px;
-}
-
-.g_share {
-    float: left;
-    padding: 10px;
-}
-
-.footer {
-    a {
+    pre.prettyprint {
         font-size: 13px;
-        text-decoration: none;
-        color: #466C77;
-        &:after {
-            content: "";
+        font-weight: bold;
+        font-family: 'Open Sans';
+        padding: 8px 12px;
+        border: 0;
+        border-radius: 4px;
+    }
+    .post {
+        .header {
+            text-align: center;
         }
     }
-    h4 {
-        color: #466C77;
+    .pager {
+        a {
+            color: $background-color !important;
+        }
     }
-}
-
-.share-div {
-    padding: 3%;
-    padding-left: 1%;
-    padding-top: 1%;
-}
-
-.recent_posts li {
-    display: block;
-    color: #fff;
-}
-
-.footer {
-    background: #F3F7F8;
-    margin-top: 10px;
-    ul {
-        display: block;
-        margin-left: 0px;
-        padding-left: 0px;
-        li {
-            display: block;
-            a:hover {
-                text-decoration: underline;
+    .post-meta {
+        .post-descr {
+            padding: 15px 5px;
+            .comments {
+                color: $background-color !important;
             }
         }
     }
-}
-
-.end_footer {
-    background: #F3F7F8;
-}
-
-.footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: #F3F7F8 1px solid;
-}
-
-.end_footer p {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #466C77;
-    text-align: left;
-}
-
-.footer-logo {
-    margin-left: auto;
-    margin-right: auto;
-    width: 150px;
-    height: 150px;
-    padding: 0px;
-}
-
-@media screen and (max-width: 480px) {
-    .left-syms li a span {
-        display: block;
+    .footer {
+        p {
+            text-align: center;
+            padding: 10px;
+        }
     }
-}
-
-.center-aligned-div {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    .share {
+        text-align: center;
+        margin: 0 auto;
+        padding: 10px;
+        div {
+            display: inline-flex;
+            padding: 5px;
+        }
+    }
+    .fa {
+        font-size: 21px;
+    }
+    .author-links {
+        text-align: center;
+        padding: 10px;
+        ul {
+            -webkit-margin-after: 0;
+            margin: 0;
+            -webkit-padding-start: 0;
+            -webkit-margin-before: 0;
+            display: inline-block;
+            -webkit-margin-start: 0;
+            li {
+                float: left;
+                padding: 30px 30px 0;
+                display: block;
+                a {
+                    color: $background-color !important;
+                }
+            }
+        }
+    }
+    .source-code {
+        text-align: center;
+        padding: 10px;
+    }
 }

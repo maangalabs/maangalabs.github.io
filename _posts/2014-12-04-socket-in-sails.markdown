@@ -225,20 +225,20 @@ So here is our logic
 
 {% highlight javascript %}
 
-addConv:function (req,res) {
-		
-		var data_from_client = req.params.all();
+addConv: function(req, res) {
 
-		if(req.isSocket && req.method === 'POST'){
+    var data_from_client = req.params.all();
 
-			// This is the message from connected client
-			// So add new conversation
+    if (req.isSocket && req.method === 'POST') {
 
-		}
-		else if(req.isSocket){
-			// subscribe client to model changes 
-		}
-	}	
+        // This is the message from connected client
+        // So add new conversation
+
+    } else if (req.isSocket) {
+        // subscribe client to model changes 
+    }
+}
+
 
 {% endhighlight %}
 
@@ -252,7 +252,6 @@ When a new Chat Model Instance is created , we will push the corresponding data 
 Modify the code with corresponding functions 
 
 {% highlight javascript %}
-
 /**
  * ChatController
  *
@@ -262,27 +261,31 @@ Modify the code with corresponding functions
 
 module.exports = {
 
-	addConv:function (req,res) {
-		
-		var data_from_client = req.params.all();
+    addConv: function(req, res) {
 
-		if(req.isSocket && req.method === 'POST'){
+        var data_from_client = req.params.all();
 
-			// This is the message from connected client
-			// So add new conversation
-			Chat.create(data_from_client)
-				.exec(function(error,data_from_client){
-					console.log(data_from_client);
-					Chat.publishCreate({id: data_from_client.id, message : data_from_client.message , user:data_from_client.user});
-				}); 
-		}
-		else if(req.isSocket){
-			// subscribe client to model changes 
-			Chat.watch(req.socket);
-			console.log( 'User subscribed to ' + req.socket.id );
-		}
-	}	
+        if (req.isSocket && req.method === 'POST') {
+
+            // This is the message from connected client
+            // So add new conversation
+            Chat.create(data_from_client)
+                .exec(function(error, data_from_client) {
+                    console.log(data_from_client);
+                    Chat.publishCreate({ 
+                    	id: data_from_client.id, 
+                    	message: data_from_client.message,
+                    	user: data_from_client.user
+                    });
+                });
+        } else if (req.isSocket) {
+            // subscribe client to model changes 
+            Chat.watch(req.socket);
+            console.log('User subscribed to ' + req.socket.id);
+        }
+    }
 };
+
 
 {% endhighlight %}
 
@@ -447,24 +450,21 @@ Now we add some input fields to the page to take input from user.
 
 We can take username and message from user. Edit the HTML code as follows
 {% highlight html %}
-<div class="navbar navbar-inverse navbar-fixed-bottom" >
-	  <div class="col-lg-12">
-	    
-	    <form class="form_chat">
-	    	<div class="col-lg-4 col-md-3">
-	    		<!-- Username -->
-	      		<input type="text" ng-model = "chatUser" class="form-control" placeholder="TypeYourNameHere">
-          	</div>
-          	
-	    	<div class="col-lg-6 col-md-5">
-	    		<!-- Chat Message -->
-	      		<input type="text" ng-model = "chatMessage" class="form-control" placeholder="TypeYourMessageHere">
-          	</div>
-          	<button class="btn btn-default col-lg-2 col-md-2" ng-click="sendMsg()">Send</button>  
-	    </form>
-	    
-	  </div>
-	</div>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="col-lg-12">
+        <form class="form_chat">
+            <div class="col-lg-4 col-md-3">
+                <!-- Username -->
+                <input type="text" ng-model="chatUser" class="form-control" placeholder="TypeYourNameHere">
+            </div>
+            <div class="col-lg-6 col-md-5">
+                <!-- Chat Message -->
+                <input type="text" ng-model="chatMessage" class="form-control" placeholder="TypeYourMessageHere">
+            </div>
+            <button class="btn btn-default col-lg-2 col-md-2" ng-click="sendMsg()">Send</button>
+        </form>
+    </div>
+</div>
 {% endhighlight %}
 
 
@@ -484,51 +484,47 @@ $scope.sendMsg = function(){
 
 So the Angular code will now look like 
 {% highlight javascript%}
+var socketApp = angular.module('socketApp', []);
+
+socketApp.controller('ChatController', ['$http', '$log', '$scope', function($http, $log, $scope) {
 
 
+    $scope.predicate = '-id';
+    $scope.reverse = false;
+    $scope.baseUrl = 'http://sails-socket-maangalabs.herokuapp.com';
+    $scope.chatList = [];
+    $scope.getAllchat = function() {
 
-		var socketApp = angular.module('socketApp',[]);
+        io.socket.get('/chat/addconv');
 
-		socketApp.controller('ChatController',['$http','$log','$scope',function($http,$log,$scope){
+        $http.get($scope.baseUrl + '/chat')
+            .success(function(success_data) {
 
+                $scope.chatList = success_data;
+                $log.info(success_data);
+            });
+    };
 
-			$scope.predicate = '-id';
-			$scope.reverse = false;
-			$scope.baseUrl = 'http://sails-socket-maangalabs.herokuapp.com';
-			$scope.chatList =[];
-			$scope.getAllchat = function(){
+    $scope.getAllchat();
+    $scope.chatUser = "nikkyBot"
+    $scope.chatMessage = "";
 
-				io.socket.get('/chat/addconv');
+    io.socket.on('chat', function(obj) {
 
-				$http.get($scope.baseUrl+'/chat')
-					 .success(function(success_data){
+        if (obj.verb === 'created') {
+            $log.info(obj)
+            $scope.chatList.push(obj.data);
+            $scope.$digest();
+        }
 
-					 		$scope.chatList = success_data;
-					 		$log.info(success_data);
-					 });
-			};
+    });
 
-			$scope.getAllchat();
-			$scope.chatUser = "nikkyBot"
-			$scope.chatMessage="";
-
-			io.socket.on('chat',function(obj){
-
-				if(obj.verb === 'created'){
-					$log.info(obj)
-					$scope.chatList.push(obj.data);
-					$scope.$digest();
-				}
-
-			});
-
-			$scope.sendMsg = function(){
-				$log.info($scope.chatMessage);
-				io.socket.post('/chat/addconv/',{user:$scope.chatUser,message: $scope.chatMessage});
-				$scope.chatMessage = "";
-			};
-		}]);
-
+    $scope.sendMsg = function() {
+        $log.info($scope.chatMessage);
+        io.socket.post('/chat/addconv/', { user: $scope.chatUser, message: $scope.chatMessage });
+        $scope.chatMessage = "";
+    };
+}]);
 {% endhighlight %}
 
 
@@ -537,49 +533,52 @@ I've set the chatUser to `nikkyBot` which can be edited by user.
 Now let us add some css customisations 
 
 {% highlight html%}
+body {
+    background: #ededed;
+    font - family: 'Open Sans',
+    sans - serif;
 
-body{
-		background: #ededed;
-		font-family: 'Open Sans', sans-serif;
+}
+.navbar {
+    border - radius: 0 px;
+}
+.form_chat {
+    padding: 10 px;
+}
+.form-control {
+    width: inherit;
+}
+.chat_message {
+    padding: 10 px;
+    color: #000;
+        font-size: 15px;
+        background: # fff;
+    font - family: 'Open Sans',
+    sans - serif;
+}
+.td_class {
+    word -
+        break: break -all;
+    padding: 34 px;
+    padding - bottom: 0 px;
+    padding - top: 20 px;
+    border: 0;
+}
+.navbar-brand {
+    font - size: 14 px;
+    font - weight: 600;
+    text - decoration: none;
+}
+.user_name {
+    padding - bottom: 0;
+    color: #fff;
+    font - size: 15 px;
+}
+.col - lg - 4, .col - lg - 6 {
+    padding - right: 3 px;
+    padding - left: 3 px;
+}
 
-	}
-	.navbar{
-		border-radius: 0px;
-	}
-	.form_chat{
-		padding:10px;
-	}
-	.form-control{
-		width: inherit;
-	}
-	.chat_message{
-		padding: 10px;
-		color: #000;
-		font-size: 15px;
-		background: #fff;
-		font-family: 'Open Sans', sans-serif;
-	}
-	.td_class{
-		word-break:break-all;
-		padding: 34px;
-		padding-bottom: 0px;
-		padding-top: 20px;
-		border:0;
-	}
-	.navbar-brand{
-		font-size: 14px;
-		font-weight: 600;
-		text-decoration: none;
-	}
-	.user_name{
-		padding-bottom: 0;
-		color: #fff;
-		font-size: 15px;
-	}
-	.col-lg-4,.col-lg-6{
-		padding-right: 3px;
-		padding-left: 3px;
-	}
 
 {% endhighlight %}
 

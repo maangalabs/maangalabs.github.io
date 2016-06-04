@@ -12,11 +12,12 @@ Hi ,
 
 This is the second part of building a realtime web application with Sails and Angular. The concept of REST API is important here. You can read more about REST API and RESTFUL web services <a target="_blank" href="http://www.restapitutorial.com/">here</a>.
 
+<!-- more -->
 <b>UPDATE (25-OCT-2015) : </b> I've updated the article including the testing of Sails CRUD APIs (GET,POST,PUT,DELETE methods). 
 <h4>How to generate a REST API with Sails JS ?</h4>
 
 As i said earlier Sails is a rapid prototyping platform , API generation is faster and easier in Sails . 
-<!-- more -->
+
 {%highlight javascript %}
 sails generate api employee
 {%endhighlight%}
@@ -162,26 +163,25 @@ File will be as shown as above. If we want to write an API say `employee/findEmp
  */
 
 module.exports = {
-  
-  findEmployeebyEmpnum:function (req,res) {
-    var id = req.param('id');
-    Employee.findOne({empnum:id})
-        .exec(function (err,user) {
-          if(err){
-            return res.json({
-              error:err
+
+    findEmployeebyEmpnum: function(req, res) {
+        var id = req.param('id');
+        Employee.findOne({ empnum: id })
+            .exec(function(err, user) {
+                if (err) {
+                    return res.json({
+                        error: err
+                    });
+                }
+                if (user === undefined) {
+                    return res.notFound();
+                } else
+                    return res.json({
+                        notFound: false,
+                        userData: user
+                    });
             });
-          }
-          if(user === undefined) {
-            return res.notFound();
-          }
-          else
-            return res.json({
-              notFound:false,
-              userData:user
-            });
-        });
-  }
+    }
 };
 
 {% endhighlight %}

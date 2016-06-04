@@ -16,6 +16,7 @@ I've been working with a new theme which gives a fresh look for the blog. Here i
 <h4>Adipoli - An Octopress theme</h4>
 
 I've started the work from the `bootstrap-theme` repository and i've used the same code highlighter. This theme gives you a feel of wordpress blogs. We have inbuilt integration with twitter and github . Sharing Widgets are also added . You can configure <strong>feedburner</strong> which is a newbie here :) .
+
 <!-- more -->
 
 <h4>Installation Instructions</h4>

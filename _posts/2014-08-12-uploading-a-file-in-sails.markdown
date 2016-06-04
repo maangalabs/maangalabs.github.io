@@ -14,6 +14,7 @@ featured_image: /images/posts/7/upl-9.png
 Hi all
 
 Here is a new tutorial in the Sails and Angular Series. Actually i was thinking about writing a tutorial on loading effects during Sails Angular API calls . This will be handled in next tutorials.To keep you engaged today we will see how an upload function can be created in Sails.
+
 <!-- more -->
 <h4>Configure route and layout</h4>
 
@@ -81,24 +82,24 @@ Create a File controller as shown below.
 
 We will add new function upload in File controller which can be accessed through REST api `/file/upload` . We will block access to `upload API` through GET method . When upload function is complete we will return the file details with status 200.
 {% highlight javascript %}
-  upload: function  (req, res) {
-		if(req.method === 'GET')
-			return res.json({'status':'GET not allowed'});						
-			//	Call to /upload via GET is error
+upload: function(req, res) {
+    if (req.method === 'GET')
+        return res.json({ 'status': 'GET not allowed' });
+    //	Call to /upload via GET is error
 
-		var uploadFile = req.file('uploadFile');
-		console.log(uploadFile);
+    var uploadFile = req.file('uploadFile');
+    console.log(uploadFile);
 
-	    uploadFile.upload(function onUploadComplete (err, files) {				
-	    //	Files will be uploaded to .tmp/uploads
-	    																		
-	    	if (err) return res.serverError(err);								
-	    	//	IF ERROR Return and send 500 error with error
-			
-	    	console.log(files);
-	    	res.json({status:200,file:files});
-	    });
-	},
+    uploadFile.upload(function onUploadComplete(err, files) {
+        //	Files will be uploaded to .tmp/uploads
+
+        if (err) return res.serverError(err);
+        //	IF ERROR Return and send 500 error with error
+
+        console.log(files);
+        res.json({ status: 200, file: files });
+    });
+}
 {% endhighlight %}
 
 <ul>
@@ -137,22 +138,20 @@ Here we could upload the file to .tmp/uploads . So how do we configure it with a
 `The tutorial has been updated to work with latest Sails version .`
 
 {% highlight javascript %}
+// Configure with 'dirname' 
 
-	// Configure with 'dirname' 
-
-    uploadFile.upload({ dirname: '../../assets/images'},function onUploadComplete (err, files) {				
+uploadFile.upload({ dirname: '../../assets/images' }, function onUploadComplete(err, files) {
     // Earlier it was ./assets/images .. Changed to ../../assets/images
     //	Files will be uploaded to ./assets/images
     // Access it via localhost:1337/images/file-name
 
 
-	    	if (err) return res.serverError(err);									
-	    	//	IF ERROR Return and send 500 error
-			
-	    	console.log(files);
-	    	res.json({status:200,file:files});
-	    });
-	
+    if (err) return res.serverError(err);
+    //	IF ERROR Return and send 500 error
+
+    console.log(files);
+    res.json({ status: 200, file: files });
+});
 {% endhighlight %}
 
 You can add an option `dirname` (string) to upload to a custom folder .For more see `skipper-docs`.

@@ -11,6 +11,7 @@ featured_image: /images/posts/9/waterlock-7.png
 Hello all,
 
 This is a new tutorial on Sails . Many of you were asking how to implement authentication in Sails. Here i've an awesome tool called <a href="http://waterlock.ninja/" target="_blank">Waterlock</a> which enables easier authentication methods. 
+
 <!-- more -->
 <h4>What is Waterlock ?</h4>
 
