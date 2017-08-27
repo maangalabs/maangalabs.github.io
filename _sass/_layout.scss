@@ -1,8 +1,12 @@
 .body {
-    font-family: 'Arvo', serif;
+    font-family: $base-font-family;
     -webkit-font-smoothing: antialiased;
     .content-container {
         margin-top: 80px;
+    }
+    h3, h4, h5 {
+      font-weight: 600;
+      font-size: 18px;
     }
     h3 {
         a {
@@ -13,7 +17,7 @@
         background: $background-color;
         border: 1px solid $text-color;
         padding: 10px;
-        font-size: 14px;
+        font-size: 16px;
     }
     .btn-primary:hover,
     .btn-primary:active,
@@ -38,12 +42,12 @@
         }
     }
     p {
-        font-size: 14px;
-        font-family: 'Arvo', serif;
+        font-size: 16px;
+        font-family: $base-font-family;
         -webkit-font-smoothing: antialiased;
     }
     code.highlighter-rouge {
-        font-family: 'Arvo', serif;
+        font-family: $base-font-family;
     }
     img {
         max-width: 100%;
